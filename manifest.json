@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "version": "1.1.2",
+  "name": "asdsa",
+  "description": "asd",
+  "icons": { "32": "assets/images/reptile.png" },
+  "action": {
+    "default_title": "爬取文档",
+    "default_icon": "assets/images/reptile.png",
+    "default_popup": "src/pages/popup/index.html"
+  },
+  "host_permissions": ["<all_urls>", "*://*/*"],
+  "background": {
+    "service_worker": "js/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/index.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": ["contextMenus", "notifications", "cookies", "tabs", "webRequest", "power"],
+  "devtools_page": "js/devtool.js",
+  "omnibox": {
+    "keyword": "reptile_chrome_plugins"
+  }
+}
