@@ -1,0 +1,2 @@
+vue方式写chrome插件 
+devtool popup content_script 之间通信

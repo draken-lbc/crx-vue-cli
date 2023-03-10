@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "version": "1.1.2",
-  "name": "asdsa",
-  "description": "asd",
+  "name": "crx-vue-cli",
+  "description": "vue形式开发chrome插件",
   "icons": { "32": "assets/images/reptile.png" },
   "action": {
     "default_title": "爬取文档",
@@ -22,7 +22,16 @@
     }
   ],
   "permissions": ["contextMenus", "notifications", "cookies", "tabs", "webRequest", "power"],
-  "devtools_page": "js/devtool.js",
+  "devtools_page": "devtool/index.html",
+  "web_accessible_resources": [
+    {
+      "resources": ["js/scriptGlobal.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "options_ui": {
+    "page": "src/pages/options/index.html"
+  },
   "omnibox": {
     "keyword": "reptile_chrome_plugins"
   }
